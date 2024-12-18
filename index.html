@@ -7,27 +7,67 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Showcasing my work in marketing, business, and literature.</p>
-    </header>
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Hello! I'm Tom Bibbee. I'm currently a senior at the University of Minnesota studying Marketing, International Business, and French. This is where I'll showcase my projects and skills.</p>
-        </section>
-        <section>
-            <h2>My Projects</h2>
-            <ul>
-                <li>Project 1: Coming soon...</li>
-                <li>Project 2: Coming soon...</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>Contact me at: bibbe005@umn.edu</p>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Tom Bibbee</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hi, my name is <span class="highlight">Tom</span>.</h1>
+            <p>I'm a <strong>marketing student</strong> passionate about <span class="highlight-text">brand strategy</span> and <span class="highlight-text">data analysis</span>.</p>
+        </div>
+        <!-- Word "SCROLL" -->
+        <div class="hero-scroll">
+            <span>S</span>
+            <span>C</span>
+            <span>R</span>
+            <span>O</span>
+            <span>L</span>
+            <span>L</span>
+        </div>
+        <!-- Arrow -->
+        <div class="scroll-arrow">
+            <span>&darr;</span>
+        </div>
+    </section>    
+
+    <!-- Split Layout Section -->
+    <section id="about">
+        <div class="split">
+            <div class="split-text">
+                <h2>Nice to meet you!</h2>
+                <p>I am always seeking opportunities to make a positive change, the <span class="highlight-text">creative</span> way.</p>
+            </div>
+            <div class="split-image">
+                <img src="images/your-image.jpg" alt="Creative Background">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <img src="images/project1-thumbnail.jpg" alt="Project 1 Screenshot">
+            <h3>Project 1 Title</h3>
+            <p>A brief description of the project and what it does.</p>
+            <a href="#" target="_blank" class="btn">View Project</a>
+            <a href="#" target="_blank" class="btn">View Code</a>
+        </div>
+    </section>
+
+    <!-- Footer or Contact Section -->
+    <footer id="contact">
+        <p>Contact me at: <a href="mailto:bibbe005@umn.edu">bibbe005@umn.edu</a></p>
     </footer>
-    <!-- Link to JavaScript -->
-    <script src="script.js"></script>
+  <!-- Link to JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

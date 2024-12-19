@@ -69,10 +69,11 @@ nav a:hover {
 }
 
 .hero-content .highlight {
-    color: #2575fc;
     background: linear-gradient(to right, #6a11cb, #2575fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Standard property for modern browsers */
+    -webkit-background-clip: text; /* Vendor-prefixed version for WebKit-based browsers */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent for gradient */
+    color: transparent; /* Fallback for unsupported browsers */
 }
 
 .hero-content p {

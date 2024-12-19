@@ -42,3 +42,26 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollArrow.classList.add("show");
     }, 1000); // Delay for effect (1s)
 });
+
+// Select all elements with the class 'reveal'
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150; // Adjust for earlier or later reveal
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('visible');
+        } else {
+            reveals[i].classList.remove('visible'); // Optionally hide again when scrolling up
+        }
+    }
+}
+
+// Add event listener for scroll
+window.addEventListener('scroll', revealOnScroll);
+
+// Initial check in case elements are already in view
+revealOnScroll();

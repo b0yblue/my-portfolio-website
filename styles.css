@@ -13,42 +13,67 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation Bar */
+/* General navbar styling */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 50px;
+    background: white; /* Dark background */
+    color: #333;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2575fc;
-}
-
-nav ul {
+  }
+  
+  /* Left, Center, Right Sections */
+  .nav-left, .nav-center, .nav-right {
     display: flex;
-    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-left ul, .nav-right ul {
+    display: flex;
     list-style: none;
-}
-
-nav a {
+    gap: 20px;
+    margin: 0;
+  }
+  
+  .nav-center {
+    flex: 1; /* Push the center to the middle */
+    justify-content: center;
+  }
+  
+  .nav-left a, .nav-right a {
     text-decoration: none;
     color: #333;
     font-size: 1rem;
     transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #2575fc;
-}
+  }
+  
+  .nav-left a:hover, .nav-right a:hover {
+    color: #2575fc; /* Accent color */
+  }
+  
+  /* Logo Styling */
+  .nav-center .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Icon Styling */
+  .nav-right img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Makes icons white for dark backgrounds */
+    transition: transform 0.2s ease;
+  }
+  
+  .nav-right img:hover {
+    transform: scale(1.1); /* Slight hover effect */
+  }
+  
 
 /* Hero Section */
 #hero {
@@ -69,11 +94,10 @@ nav a:hover {
 }
 
 .hero-content .highlight {
+    color: #2575fc;
     background: linear-gradient(to right, #6a11cb, #2575fc);
-    background-clip: text; /* Standard property for modern browsers */
-    -webkit-background-clip: text; /* Vendor-prefixed version for WebKit-based browsers */
-    -webkit-text-fill-color: transparent; /* Makes the text transparent for gradient */
-    color: transparent; /* Fallback for unsupported browsers */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
@@ -247,4 +271,15 @@ footer {
     color: white;
     padding: 15px 0;
     font-size: 0.9rem;
+}
+
+.nav-right i {
+    font-size: 1.5rem; /* Adjust the size of the icons */
+    color: #333; /* Default icon color */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-right i:hover {
+    color: #2575fc; /* Accent color on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }

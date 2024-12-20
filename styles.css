@@ -275,8 +275,8 @@ nav {
 /* Footer */
 footer {
     text-align: center;
-    background: #333;
-    color: white;
+    background: #ffffff;
+    color: black;
     padding: 15px 0;
     font-size: 0.9rem;
 }
@@ -354,9 +354,35 @@ strong {
     filter: brightness(1.2); /* Brightness effect */
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
-    .image-row img {
-        height: 80px; /* Reduce image size for smaller screens */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .nav-left, .nav-center, .nav-right {
+        width: 100%; /* Make all sections take the full width */
+        justify-content: space-around; /* Space items evenly */
+        margin: 10px 0;
+    }
+
+    .nav-center {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Slightly larger text for easier tapping */
+    }
+
+    .nav-right i {
+        font-size: 1.8rem; /* Adjust icon size */
     }
 }
 .highlight {

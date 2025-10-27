@@ -163,7 +163,7 @@ nav {
 .scroll-arrow {
     position: absolute;
     bottom: 1.5px; /* Directly below the "SCROLL" word */
-    left: 49.3%; /* Your desired position */
+    left: 48.8%; /* Your desired position */
     transform: translateX(-49.3%); /* Centering based on 49.3% */
     font-size: 2rem; /* Size of the arrow */
     color: #aaa;

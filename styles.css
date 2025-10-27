@@ -433,7 +433,7 @@ html {
 }
 
 .featured-logo {
-    height: 150px; /* Slightly larger than other logos but not too large */
+    height: 120px; /* Reduced from 150px to be closer to other logos */
     width: auto;
     margin: 0 auto;
     filter: brightness(1.1);
@@ -441,7 +441,7 @@ html {
 }
 
 .featured-logo:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
+    transform: scale(1.1); /* Matches the scale of other images */
     filter: brightness(1.3);
 }
 

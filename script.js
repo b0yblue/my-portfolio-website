@@ -17,14 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Fade-out effect for external links
+    // Fade-out effect for external links (open in new tab)
+    // IMPORTANT: do NOT change window.location for links with target="_blank" —
+    // the browser will open them in a new tab by default. Changing window.location
+    // here causes the current tab to also navigate to the same URL (duplicate).
     const externalLinks = document.querySelectorAll("a[target='_blank']");
     externalLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
+        link.addEventListener("click", function () {
+            // Let the browser open the URL in a new tab. Only apply a visual effect
+            // to the current page; do NOT navigate the current tab.
             document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = this.href;
-            }, 500);
+            // No window.location change here.
         });
     });
 });

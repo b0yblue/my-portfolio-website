@@ -46,6 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000); // Delay for effect (1s)
 });
 
+// Hide nav bar on scroll down, show on scroll up
+let lastScrollY = window.scrollY;
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', function () {
+  const currentScrollY = window.scrollY;
+  
+  if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    // Scrolling down
+    nav.classList.add('nav-hidden');
+  } else {
+    // Scrolling up
+    nav.classList.remove('nav-hidden');
+  }
+  
+  lastScrollY = currentScrollY;
+});
+
 // Select all elements with the class 'reveal'
 const reveals = document.querySelectorAll('.reveal');
 
@@ -62,6 +80,62 @@ function revealOnScroll() {
         }
     }
 }
+
+(function(){ 
+  const navbar = document.getElementById('navbar'); 
+  if (!navbar) return; 
+ 
+  let lastScrollY = window.scrollY; 
+  let ticking = false; 
+  const THROTTLE_MS = 100;    // check at most every 100ms 
+  const DELTA = 10;           // minimum px to treat as meaningful scroll 
+  let lastExec = 0; 
+ 
+  function onScroll(){ 
+    const now = Date.now(); 
+    if (now - lastExec < THROTTLE_MS) { 
+      if (!ticking) { 
+        ticking = true; 
+        requestAnimationFrame(() => { 
+          handleScroll(); 
+          ticking = false; 
+        }); 
+      } 
+      return; 
+    } 
+    lastExec = now; 
+    handleScroll(); 
+  } 
+ 
+  function handleScroll(){ 
+    const currentY = window.scrollY; 
+    const diff = currentY - lastScrollY; 
+ 
+    // if near top, always show 
+    if (currentY <= 0) { 
+      navbar.classList.remove('navbar--hidden'); 
+      lastScrollY = currentY; 
+      return; 
+    } 
+ 
+    if (Math.abs(diff) <= DELTA) { 
+      // ignore tiny moves 
+      return; 
+    } 
+ 
+    if (diff > 0) { 
+      // scrolled down -> hide navbar 
+      navbar.classList.add('navbar--hidden'); 
+    } else { 
+      // scrolled up -> show navbar 
+      navbar.classList.remove('navbar--hidden'); 
+    } 
+ 
+    lastScrollY = currentY; 
+  } 
+ 
+  window.addEventListener('scroll', onScroll, {passive:true}); 
+})(); 
 
 // Add event listener for scroll
 window.addEventListener('scroll', revealOnScroll);
